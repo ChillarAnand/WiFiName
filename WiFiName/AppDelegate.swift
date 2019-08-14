@@ -8,19 +8,39 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
+    
+    var statusBarItem: NSStatusItem!
+    var wifiName = "Test"
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        showWiFiName()
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    func getWiFiName() {
+        wifiName = "wifi name"
     }
-
+    
+    func showWiFiName() {
+        let statusBar = NSStatusBar.system
+        statusBarItem = statusBar.statusItem(
+            withLength: NSStatusItem.squareLength)
+        statusBarItem.button?.title = wifiName
+        
+        let statusBarMenu = NSMenu(title: "\(wifiName)")
+        statusBarItem.menu = statusBarMenu
+        
+        statusBarMenu.addItem(
+            withTitle: "Quit",
+            action: #selector(AppDelegate.quitWiFiName),
+            keyEquivalent: "")
+        
+    }
+    
+    @objc func quitWiFiName() {
+        print("Quitting WiFiName")
+    }
 
 }
-
