@@ -7,51 +7,36 @@
 //
 
 import Cocoa
-import MenuBar
+import SystemConfiguration.CaptiveNetwork
+import CoreWLAN
+
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var statusBarItem: NSStatusItem!
-    var wifiName = "Test"
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var wifiName = ""
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        print("asdf")
-        showWiFiName2()
-    }
-    
-    func getWiFiName() {
-        wifiName = "wifi name"
+        showWiFiName()
     }
     
     func showWiFiName() {
-        let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        statusBarItem.button?.title = wifiName
-        
-        let statusBarMenu = NSMenu(title: "\(wifiName)")
-        statusBarItem.menu = statusBarMenu
-        
-        statusBarMenu.addItem(
-            withTitle: "Quit",
-            action: #selector(AppDelegate.quitWiFiName),
-            keyEquivalent: "")
-        
+        wifiName = getWiFiName()
+        statusItem.button?.title = wifiName
+        statusItem.button?.target = self
+        statusItem.button?.action = #selector(showSettings)
     }
     
-    func showWiFiName2() {
-        let menuBar = MenuBar(descriptors: [
-            .item([.title("This is a title of an item of a menu bar")]),
-            .item([.enabled(false), .title("You can set the enabled status of the item")]),
-            .item([.state(.on), .title("Also you can mark a item with a on or off state")]),
-            .item([.action({ print("click") }), .title("This is how you set action to be executed when item is clicked")]),
-            .separator, // and this is just a separator that will be visible between the items
-            .menu([.title("And this is a menu or a submenu in this case")], [
-                .item([.title("Items in which can be configured in the same exact way")])
-                ])
-            ])
-        menuBar.title = wifiName
-        sleep(20)
+    func getWiFiName() -> String {
+        return CWInterface(interfaceName: nil).ssid() ?? "Not connected"
+    }
+    
+    @objc func showSettings() {
+        let item: NSMenu = NSMenu()
+        let quitItem = NSMenuItem(title: "Quit WiFiName", action: nil, keyEquivalent: "")
+        item.addItem(quitItem)
+        
     }
     
     @objc func quitWiFiName() {
