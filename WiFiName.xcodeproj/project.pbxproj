@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1C098CA4991A767431BB84 /* Pods_WiFiName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96E5446CE84C2A80F329724 /* Pods_WiFiName.framework */; };
 		45DCAC5E2302F0EA0078A290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DCAC5D2302F0EA0078A290 /* AppDelegate.swift */; };
 		45DCAC602302F0EA0078A290 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DCAC5F2302F0EA0078A290 /* ViewController.swift */; };
 		45DCAC622302F0EB0078A290 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DCAC612302F0EB0078A290 /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D0B7F3D90D1118306CF6437 /* Pods-WiFiName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFiName.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiFiName/Pods-WiFiName.release.xcconfig"; sourceTree = "<group>"; };
 		45DCAC5A2302F0EA0078A290 /* WiFiName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFiName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DCAC5D2302F0EA0078A290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DCAC5F2302F0EA0078A290 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,8 +21,6 @@
 		45DCAC642302F0EB0078A290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45DCAC662302F0EB0078A290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DCAC672302F0EB0078A290 /* WiFiName.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WiFiName.entitlements; sourceTree = "<group>"; };
-		4A697425752BA524D78E5622 /* Pods-WiFiName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFiName.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiFiName/Pods-WiFiName.debug.xcconfig"; sourceTree = "<group>"; };
-		C96E5446CE84C2A80F329724 /* Pods_WiFiName.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiFiName.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1C098CA4991A767431BB84 /* Pods_WiFiName.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +39,6 @@
 			children = (
 				45DCAC5C2302F0EA0078A290 /* WiFiName */,
 				45DCAC5B2302F0EA0078A290 /* Products */,
-				D324BF74D593BF1A1A12EE09 /* Pods */,
-				85D2223843D6CDC7BB3C5514 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,23 +63,6 @@
 			path = WiFiName;
 			sourceTree = "<group>";
 		};
-		85D2223843D6CDC7BB3C5514 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C96E5446CE84C2A80F329724 /* Pods_WiFiName.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D324BF74D593BF1A1A12EE09 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4A697425752BA524D78E5622 /* Pods-WiFiName.debug.xcconfig */,
-				2D0B7F3D90D1118306CF6437 /* Pods-WiFiName.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,11 +70,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45DCAC6A2302F0EB0078A290 /* Build configuration list for PBXNativeTarget "WiFiName" */;
 			buildPhases = (
-				DE6973AA0C99D674945AE5E9 /* [CP] Check Pods Manifest.lock */,
 				45DCAC562302F0EA0078A290 /* Sources */,
 				45DCAC572302F0EA0078A290 /* Frameworks */,
 				45DCAC582302F0EA0078A290 /* Resources */,
-				DDA2EECFB3EC4612634D4146 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,48 +135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DDA2EECFB3EC4612634D4146 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WiFiName/Pods-WiFiName-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WiFiName/Pods-WiFiName-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WiFiName/Pods-WiFiName-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE6973AA0C99D674945AE5E9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WiFiName-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45DCAC562302F0EA0078A290 /* Sources */ = {
@@ -345,7 +277,6 @@
 		};
 		45DCAC6B2302F0EB0078A290 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A697425752BA524D78E5622 /* Pods-WiFiName.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WiFiName/WiFiName.entitlements;
@@ -366,7 +297,6 @@
 		};
 		45DCAC6C2302F0EB0078A290 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D0B7F3D90D1118306CF6437 /* Pods-WiFiName.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WiFiName/WiFiName.entitlements;
