@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SystemConfiguration.CaptiveNetwork
 import CoreWLAN
 
 
@@ -15,7 +14,8 @@ import CoreWLAN
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    var wifiName = ""
+    var wifiName: String? = nil
+    let wifiClient = CWWiFiClient.shared()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         showWiFiName()
@@ -23,13 +23,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showWiFiName() {
         wifiName = getWiFiName()
-        statusItem.button?.title = wifiName
+        statusItem.button?.title = wifiName ?? "Not connected"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
     }
     
-    func getWiFiName() -> String {
-        return CWInterface(interfaceName: nil).ssid() ?? "Not connected"
+    func getWiFiName() -> String? {
+        let interface = wifiClient.interface()
+        return interface?.ssid()
     }
     
     @objc func showSettings() {
