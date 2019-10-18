@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, CWEventDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         listenSSIDChanges()
         showWiFiName()
+        constructMenu()
     }
 
     func listenSSIDChanges () {
@@ -35,7 +36,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, CWEventDelegate {
         wifiName = getWiFiName()
         statusItem.button?.title = wifiName ?? "Not connected"
         statusItem.button?.target = self
-        statusItem.button?.action = #selector(showSettings)
     }
 
     func getWiFiName() -> String? {
@@ -48,16 +48,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, CWEventDelegate {
             self.showWiFiName()
         }
     }
-
-    @objc func showSettings() {
-        let item: NSMenu = NSMenu()
-        let quitItem = NSMenuItem(title: "Quit WiFiName", action: nil, keyEquivalent: "")
-        item.addItem(quitItem)
-
+    
+    func constructMenu() {
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Quit WiFiName", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        statusItem.menu = menu
     }
-
-    @objc func quitWiFiName() {
-        print("Quitting WiFiName")
-    }
-
 }
