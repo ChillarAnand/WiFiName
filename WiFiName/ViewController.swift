@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import MenuBar
 
 
 class ViewController: NSViewController {
